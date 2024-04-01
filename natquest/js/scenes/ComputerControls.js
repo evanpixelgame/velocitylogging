@@ -22,9 +22,9 @@ export default class ComputerControls extends Phaser.Scene  {
 
   create() {
 
-    this.openWorldScene = this.scene.get('OpenWorld');
-      this.player = this.openWorldScene.player;
-        this.speed = this.openWorldScene.speed;
+  //  this.openWorldScene = this.scene.get('OpenWorld');
+//      this.player = this.openWorldScene.player;
+ //       this.speed = this.openWorldScene.speed;
 
     
     // COMPUTER/TV SCREEN SPECIFIC LOGIC 
@@ -74,9 +74,9 @@ update(time, delta) {
 this.player.body.velocity.y = velocityY;
 
  
-//  console.log(this.player);
-//    console.log(this.player.body);
-//    console.log(this.player.body.velocity);
+console.log(this.player);
+    console.log(this.player.body);
+   console.log(this.player.body.velocity);
 
     // Play appropriate animation based on movement direction
     if (velocityX !== 0 || velocityY !== 0) {
