@@ -88,7 +88,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               case 'InsideRoomToNextRoom':
             console.log('take me back home again daddy');
          //   const newPosition = { x: 560, y: 715 };
-              scene.scene.remove('ComputerControls');
+            //  scene.scene.remove('ComputerControls');
              scene.scene.start('NextRoom', {
                 player: scene.player,
                 speed: scene.speed,
