@@ -89,6 +89,35 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 
   }
 
+  
+update(time, delta) {
+    if (!this.player) {
+        return;
+    }
+
+    const playerBody = this.player.body;
+
+const velocityChange = 2; // Adjust based on desired speed
+if (this.cursors.left.isDown) {
+    playerBody.velocity.x = -velocityChange;
+} else if (this.cursors.right.isDown) {
+    playerBody.velocity.x = velocityChange;
+} else {
+    playerBody.velocity.x = 0; // Stop horizontal movement when no input
+}
+
+if (this.cursors.up.isDown) {
+    playerBody.velocity.y = -velocityChange;
+} else if (this.cursors.down.isDown) {
+    playerBody.velocity.y = velocityChange;
+} else {
+    playerBody.velocity.y = 0; // Stop vertical movement when no input
+}
+
+Matter.Body.setVelocity(playerBody, playerBody.velocity);
+
+}
+/*
 update(time, delta) {
     if (!this.player) {
         return;
@@ -140,7 +169,7 @@ update(time, delta) {
     // Finally, you may need to adjust the position based on the velocity
 }
 }
-  
+  */
 }
 
 window.OpenWorld = OpenWorld;
