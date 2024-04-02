@@ -58,13 +58,13 @@ export function sensorHandler(scene, map, player, transitionSensors) {
          //   scene.scene.remove('ComputerControls');
             scene.scene.start('InsideRoom', {
                 player: scene.player,
-                speed: scene.speed,
-                velocityX: scene.velocityX,
-                velocityY: scene.velocityY,
-                camera: scene.cameras.main,
-                controls: scene.controls, // Passing the controls object here
-                engine: scene.matter.world,
-                world: scene.world,
+            //    speed: scene.speed,
+          //      velocityX: scene.velocityX,
+          //      velocityY: scene.velocityY,
+         //       camera: scene.cameras.main,
+          //      controls: scene.controls, // Passing the controls object here
+         //       engine: scene.matter.world,
+        //        world: scene.world,
             });
             break;
             
