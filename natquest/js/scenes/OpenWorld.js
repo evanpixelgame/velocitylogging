@@ -98,7 +98,6 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
         console.error('Failed to load map');
         return;
     }
-  }
     
   }
 
