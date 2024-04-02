@@ -81,6 +81,13 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
 
+
+         this.cursors = this.scene.input.keyboard.addKeys({
+            up: Phaser.Input.Keyboard.KeyCodes.W,
+            down: Phaser.Input.Keyboard.KeyCodes.S,
+            left: Phaser.Input.Keyboard.KeyCodes.A,
+            right: Phaser.Input.Keyboard.KeyCodes.D,
+        });
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
           this.playerControls = new PlayerControls(this.player, this);
       
@@ -119,6 +126,8 @@ this.sensorHandling = sensorHandler(this, map, this.player); //used to have this
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
+
+    
 
   }
    
