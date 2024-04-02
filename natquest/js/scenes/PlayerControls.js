@@ -54,3 +54,5 @@ this.player = data.player;
         Matter.Body.setVelocity(playerBody, { x: playerBody.velocity.x, y: playerBody.velocity.y });
     }
 }
+
+window.PlayerControls = PlayerControls;
