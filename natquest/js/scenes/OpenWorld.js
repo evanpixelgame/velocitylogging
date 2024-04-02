@@ -17,6 +17,7 @@ export default class OpenWorld extends Phaser.Scene {
  //   this.velocity = { x: 0, y: 0 };
  //  this.controls = null;
   // this.cursors = null;
+    this.speed = 0;
   }
 
   init(data) {
