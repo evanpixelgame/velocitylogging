@@ -97,7 +97,7 @@ this.sensorHandling = sensorHandler(this, map, this.player);
     let y = this.player.body.position.y;
 
     // Debug graphics
-    this.debugGraphics.clear().fillStyle(0xff0000).fillCircle(x, y, 5);
+  //  this.debugGraphics.clear().fillStyle(0xff0000).fillCircle(x, y, 5);
   }
 }
 
