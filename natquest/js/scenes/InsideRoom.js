@@ -31,7 +31,8 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
     // Initialize properties
     this.player = data.player;
     this.speed = data.speed;
-    this.velocity = data.velocity;
+    this.velocityX = data.velocityX;
+    this.velocityY = data.velocityY;
     this.camera = data.camera;
     this.controls = data.controls;
     this.engine = data.engine;
