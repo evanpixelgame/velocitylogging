@@ -47,16 +47,20 @@ export default class PlayerControls extends Phaser.Scene {
         const velocityChange = 2; // Adjust based on desired speed
         if (this.cursors.left.isDown) {
             playerBody.velocity.x = -velocityChange;
+            console.log('key is pressed left i think');
         } else if (this.cursors.right.isDown) {
             playerBody.velocity.x = velocityChange;
+                  console.log('key is pressed right i think');
         } else {
             playerBody.velocity.x = 0; // Stop horizontal movement when no input
         }
 
         if (this.cursors.up.isDown) {
             playerBody.velocity.y = -velocityChange;
+             console.log('key is pressed up i think');
         } else if (this.cursors.down.isDown) {
             playerBody.velocity.y = velocityChange;
+             console.log('key is pressed down i think');
         } else {
             playerBody.velocity.y = 0; // Stop vertical movement when no input
         }
@@ -67,8 +71,8 @@ export default class PlayerControls extends Phaser.Scene {
         Matter.Body.setVelocity(playerBody, playerBody.velocity.y);
 
 
-         console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
-         console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
+      //   console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
+        // console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
     }
 
 }
