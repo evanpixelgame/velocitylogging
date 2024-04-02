@@ -5,14 +5,15 @@ export default class PlayerControls extends Phaser.Scene {
         this.player = player;
         this.speed = speed;
         this.velocity = velocity;
-                  // Create controls for arrow keys and WASD
+ /*
+        // Create controls for arrow keys and WASD
   this.cursors = this.input.keyboard.addKeys({
     up: Phaser.Input.Keyboard.KeyCodes.W,
     down: Phaser.Input.Keyboard.KeyCodes.S,
     left: Phaser.Input.Keyboard.KeyCodes.A,
     right: Phaser.Input.Keyboard.KeyCodes.D,
   });
-  
+  */
     }
 
     init(data) {
