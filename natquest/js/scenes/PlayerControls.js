@@ -5,8 +5,8 @@ export default class PlayerControls extends Phaser.Scene {
 
         // Initialize properties
         this.player = player;
-        this.scene = scene;
-        this.input = input; // Receive input manager
+  //      this.scene = scene;
+     //   this.input = input; // Receive input manager
         this.velocityChange = 2;
 
     }
