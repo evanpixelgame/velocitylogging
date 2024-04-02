@@ -16,15 +16,18 @@ export default class PlayerControls extends Phaser.Scene {
     
     */
 
-    export default class PlayerControls extends Phaser.Scene {
-    constructor(player, scene) {
-        super({ key: 'PlayerControls' }); // Automatically calls the constructor of the superclass
-
+export default class PlayerControls extends Phaser.Scene {
+    constructor(player, scene, input) {
+        super({ key: 'PlayerControls' });
+        
         // Initialize properties
         this.player = player;
         this.scene = scene;
+        this.input = input; // Receive input manager
         this.velocityChange = 2;
-          this.cursors = scene.input.keyboard.addKeys({
+
+        // Initialize cursors using the input manager
+        this.cursors = this.input.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
             down: Phaser.Input.Keyboard.KeyCodes.S,
             left: Phaser.Input.Keyboard.KeyCodes.A,
@@ -34,15 +37,11 @@ export default class PlayerControls extends Phaser.Scene {
 
         create() {
               
-          this.cursors = scene.input.keyboard.addKeys({
-            up: Phaser.Input.Keyboard.KeyCodes.W,
-            down: Phaser.Input.Keyboard.KeyCodes.S,
-            left: Phaser.Input.Keyboard.KeyCodes.A,
-            right: Phaser.Input.Keyboard.KeyCodes.D,
-        });
         }
 
     update() {
+
+        
         const playerBody = this.player.body;
 
         if (this.cursors.left.isDown) {
