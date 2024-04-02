@@ -32,7 +32,8 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
 
     // Initialize properties
     this.player = data.player;
-    this.speed = 2;
+    this.speed = data.speed;
+    this.velocity = data.velocity;
     this.camera = data.camera;
     this.controls = data.controls;
     this.engine = data.engine;
@@ -42,6 +43,7 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
     console.log("InsideRoom initialized with:", {
         player: this.player,
         speed: this.speed,
+        velocity: this.velocity,
         camera: this.camera,
        controls: this.controls,
         engine: this.engine,
@@ -102,8 +104,8 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
 
     this.scene.add('ComputerControls', ComputerControls); // Add ComputerControls scene
       this.controls = this.scene.get('ComputerControls'); // Retrieve controls scene
-    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed }); // Launch ComputerControls scene
-
+//    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed }); // Launch ComputerControls scene
+//    this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocity: { x: 0, y: 0 } });
     
     // Set world bounds for the player
     const boundaryOffset = 2;
@@ -126,6 +128,7 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
        console.log("InsideRoom end of create func status with:", {
         player: this.player,
         speed: this.speed,
+         velocity: this.velocity,
         camera: this.camera,
        controls: this.controls,
         engine: this.engine,
