@@ -91,7 +91,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
-    player.scene.matter.world.on('collisionstart', (eventData) => {
+    this.player.scene.matter.world.on('collisionstart', (eventData) => {
     // Loop through pairs of colliding bodies
     eventData.pairs.forEach(pair => {
         // Check if the player is one of the bodies involved in the collision
