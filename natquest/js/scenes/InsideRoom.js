@@ -8,6 +8,8 @@ export default class InsideRoom extends Phaser.Scene {
   
   init(data) {
  this.player = data.player;
+    this.velocityX = data.velocityX; // Retrieve the player's X velocity
+    this.velocityY = data.velocityY; // Retrieve the player's Y velocity
 }
   
   create() {
