@@ -100,7 +100,12 @@ this.controls = new PlayerControls({
 
 
 update(time, delta) {
- //   if (!this.player) {return;}
+    if (!this.player) {
+  return;
+}
+
+   this.controls.update(time, delta);
+
   
 }
 
