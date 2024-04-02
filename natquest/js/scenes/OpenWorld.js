@@ -13,7 +13,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.engine = null;
    this.world = null;
    this.controls = null;
-   this.cursors = null;
+  // this.cursors = null;
   }
 
   init(data) {
@@ -79,30 +79,11 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
-        // Create cursors
-    this.cursors = this.input.keyboard.addKeys({
-        up: Phaser.Input.Keyboard.KeyCodes.W,
-        down: Phaser.Input.Keyboard.KeyCodes.S,
-        left: Phaser.Input.Keyboard.KeyCodes.A,
-        right: Phaser.Input.Keyboard.KeyCodes.D,
-    });
-
-    // Create player controls
-    this.controls = new PlayerControls({
-        player: this.player, // Pass the player object
-        cursors: this.cursors,
-        speed: 0,            // Pass the speed value (adjust as needed)
-        velocity: { x: 0, y: 0 } // Pass the initial velocity (adjust as needed)
-    });
-
+      this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocity: { x: 0, y: 0 } });
   }
 
 
 update(time, delta) {
-    if (!this.player) {
-  return;
-}
-   this.controls.update(time, delta);
 
 }
 
