@@ -1,17 +1,14 @@
 export default class PlayerControls extends Phaser.Scene  {
-  constructor() {
+constructor() {
     super({ key: 'PLayerControls' });
 
     this.player = null;
-    this.velocity.x = 0;
-    this.velocity.y = 0;
-  }
-
+    this.velocity = { x: 0, y: 0 }; // Initialize velocity object
+}
 
     init(data) {
     // Retrieve player reference and speed from the data object
     this.player = data.player;
-    this.speed = data.speed;
    this.velocity = data.velocity;
   console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference
         console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
