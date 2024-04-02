@@ -63,6 +63,9 @@ export default class OpenWorld extends Phaser.Scene {
   this.player = new PlayerSprite(this, 495, 325, 'player', 0, 0); //last two arguments are initial velocity x, y
  // this.matter.world.add(this.engine.world, this.player.body);
 
+    if (this.player) {
+   this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0 });
+    }
     
 const boundaryOffset = 2; // Adjust this value as needed
 const worldBounds = new Phaser.Geom.Rectangle(
@@ -90,7 +93,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     }
 
 
-    this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0 });
+//   this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0 });
 
         if (map) {
         console.log('Map after control loaded successfully:', map);
