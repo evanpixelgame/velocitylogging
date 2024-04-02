@@ -21,7 +21,7 @@ export default class PlayerControls extends Phaser.Scene {
   }
 
   create() {
-/*
+
           // Create controls for arrow keys and WASD
   this.cursors = this.input.keyboard.addKeys({
     up: Phaser.Input.Keyboard.KeyCodes.W,
@@ -30,7 +30,7 @@ export default class PlayerControls extends Phaser.Scene {
     right: Phaser.Input.Keyboard.KeyCodes.D,
   });
   
-  */
+
       
   }
 
