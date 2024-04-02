@@ -97,7 +97,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
                 switch (otherBody.customID) {
                     case 'OpenWorldToInsideRoom':
                         console.log('youve hit the sensor by the door');
-                        scene.scene.start('NewScene', {
+                        this.scene.start('NewScene', {
                               player: this.player,
                               playerX: this.player.body.position.x,
                               playerY: this.player.body.position.y
