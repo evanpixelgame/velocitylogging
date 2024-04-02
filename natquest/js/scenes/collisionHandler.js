@@ -68,7 +68,11 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             
             case 'fastZone':
                 console.log('cue sirens, double speed');
-            scene.speed /= 2;
+         //   scene.speed /= 2;
+            Matter.Body.setVelocity(player.body, {
+    x: player.body.velocity.x * 2,
+    y: player.body.velocity.y * 2
+});
             break;
 
               case 'BackToOpenWorld':
