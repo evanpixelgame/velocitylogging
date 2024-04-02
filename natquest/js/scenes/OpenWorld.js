@@ -1,5 +1,7 @@
 import { PlayerSprite } from './PlayerSprite.js';
-import { sensorMapSet, createCollisionObjects, sensorHandler } from './collisionHandler.js';
+import { sensorMapSet, createCollisionObjects,
+       // sensorHandler
+       } from './collisionHandler.js';
 
 export default class OpenWorld extends Phaser.Scene {
   constructor() {
@@ -88,6 +90,35 @@ this.sensorHandling = sensorHandler(this, map, this.player);
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
+
+    player.scene.matter.world.on('collisionstart', (eventData) => {
+    // Loop through pairs of colliding bodies
+    eventData.pairs.forEach(pair => {
+        // Check if the player is one of the bodies involved in the collision
+        if (pair.bodyA === player.body || pair.bodyB === player.body) {
+            // Get the other body involved in the collision
+            const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
+            const isCustom = otherBody.isSensor == true;
+
+            if (isCustom) {
+                switch (otherBody.customID) {
+                    case 'OpenWorldToInsideRoom':
+                        console.log('You hit a transition sensor!');
+                        // Perform actions specific to this sensor
+                        console.log('youve hit the sensor by the door');
+                        scene.scene.start('InsideRoom', {
+                              player: this.player,
+                              playerX: this.player.body.position.x,
+                              playerY: this.player.body.position.y
+                        });
+                        break;
+                    // Add more cases for other sensors if needed
+                }
+            }
+        }
+    });
+});
+
   }
       
   update(time, delta) {
