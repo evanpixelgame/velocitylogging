@@ -11,8 +11,13 @@ export default class PlayerControls extends Phaser.Scene {
 
     }
 
+    init(data) {
+this.player = data.player;
+        this.velocityChange = 2;
+}
+
         create() {
-                      this.cursors = this.scene.input.keyboard.addKeys({
+                      this.cursors = this.input.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
             down: Phaser.Input.Keyboard.KeyCodes.S,
             left: Phaser.Input.Keyboard.KeyCodes.A,
