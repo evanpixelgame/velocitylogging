@@ -18,8 +18,9 @@ export default class OpenWorld extends Phaser.Scene {
     this.transitionSensors = null; // Add transitionSensors property
     this.engine = null;
    this.world = null;
-    this.cursors = null;
-    this.input = null;
+ //   this.cursors = null;
+   // this.input = null;
+    this.velocityChange = null;
   }
 
   init(data) {
@@ -86,7 +87,7 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
 
 
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
-          this.playerControls = new PlayerControls(this.player, this, this.input);
+          this.playerControls = new PlayerControls(this.player, this.velocityChange);
       
     console.log(this.player.body);
     console.log('Player World:', this.player.body.world);
