@@ -88,9 +88,9 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     // Loop through pairs of colliding bodies
     eventData.pairs.forEach(pair => {
         // Check if the player is one of the bodies involved in the collision
-        if (pair.bodyA === player.body || pair.bodyB === player.body) {
+        if (pair.bodyA === this.player.body || pair.bodyB === this.player.body) {
             // Get the other body involved in the collision
-            const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
+            const otherBody = pair.bodyA === this.player.body ? pair.bodyB : pair.bodyA;
             const isCustom = otherBody.isSensor == true;
 
             if (isCustom) {
