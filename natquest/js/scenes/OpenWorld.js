@@ -53,7 +53,7 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
   /* this.scene.launch('ComputerControls', { player: this.player, speed: this.speed }, (scene) => {
   this.controls = scene; // Scene instance passed as argument
 }); */
-    this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
+    // this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
     this.scene.launch('CompUI', { OpenWorld: this, player: this.player, speed: this.speed, map: this.map, camera: this.cameras.main });
 
     // Load map
@@ -85,7 +85,7 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
 
 
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
-          this.playerControls = new PlayerControls(this.player, this);
+          this.playerControls = new PlayerControls(this.player, this, this.input);
       
     console.log(this.player.body);
     console.log('Player World:', this.player.body.world);
