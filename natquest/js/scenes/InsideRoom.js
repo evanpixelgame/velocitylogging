@@ -5,8 +5,7 @@ export default class InsideRoom extends Phaser.Scene {
   constructor() {
     super({ key: 'InsideRoom' });
   }
-
-
+  
   init(data) {
  this.player = data.player;
 }
@@ -45,15 +44,11 @@ export default class InsideRoom extends Phaser.Scene {
       this.collisionObjects = createCollisionObjects(this, map);
       this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
       this.sensorHandling = sensorHandler(this, map, this.player);
-
     
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
-
   }
 
   update(time, delta) {
   }
 }
-
-window.InsideRoom = InsideRoom;
