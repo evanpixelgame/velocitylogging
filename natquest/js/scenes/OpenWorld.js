@@ -132,9 +132,9 @@ this.sensorHandling = sensorHandler(this, map, this.player); //used to have this
         
   update(time, delta) {
     // Update method code here
-     if (this.playerControls) {
-            this.playerControls.update();
-        }
+  //   if (this.playerControls) {
+    //        this.playerControls.update();
+    //    }
   }
 }
 
