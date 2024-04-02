@@ -82,7 +82,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
-      this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0);
+      this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0});
   }
 
 
