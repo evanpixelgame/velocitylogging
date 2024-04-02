@@ -117,59 +117,8 @@ if (this.cursors.up.isDown) {
 Matter.Body.setVelocity(playerBody, playerBody.velocity);
 
 }
-/*
-update(time, delta) {
-    if (!this.player) {
-        return;
-    }
 
-    const playerBody = this.player.body;
-  console.log(playerBody);
-  console.log(playerBody.velocity);
-
-    // Handle keyboard input for player movement
-    let forceX = 0;
-    let forceY = 0;
-
-    if (this.cursors.left.isDown) {
-        forceX -= 0.01; // Adjust this value as needed
-        console.log('Left key is down');
-    } else if (this.cursors.right.isDown) {
-        forceX += 0.01; // Adjust this value as needed
-        console.log('Right key is down');
-    }
-
-    if (this.cursors.up.isDown) {
-        forceY -= 0.01; // Adjust this value as needed
-        console.log('Up key is down');
-    } else if (this.cursors.down.isDown) {
-        forceY += 0.01; // Adjust this value as needed
-        console.log('Down key is down');
-    }
-
-    // Update velocities using Body.updateVelocities
-  //  Body.updateVelocities(playerBody);
-
-    // Apply forces to the player body
-    playerBody.force.x += forceX;
-    playerBody.force.y += forceY;
-
-    // Apply constraints, such as limiting maximum speed
-    Matter.Body.setAngularVelocity(playerBody, 0); //ensures player doesnt rotate
-     const maxVelocity = .5; // Adjust this value as needed
-    const currentVelocity = playerBody.velocity;
-    const currentSpeed = Math.sqrt(currentVelocity.x * currentVelocity.x + currentVelocity.y * currentVelocity.y);
-    if (currentSpeed > maxVelocity) {
-        const scale = maxVelocity / currentSpeed;
-        Matter.Body.setVelocity(playerBody, {
-            x: currentVelocity.x * scale,
-            y: currentVelocity.y * scale
-        });
-
-    // Finally, you may need to adjust the position based on the velocity
-}
-}
-  */
+  
 }
 
 window.OpenWorld = OpenWorld;
