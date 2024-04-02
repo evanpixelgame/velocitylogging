@@ -4,18 +4,8 @@ export class PlayerSprite extends Phaser.Physics.Matter.Sprite {
 
         // Initialize the player sprite
         this.init();
-
         // Add the player sprite to the scene
         scene.add.existing(this);
-        
-        // Set the world property to the scene's matter world
-      //  this.world = scene.matter.world;
-        this.body = this.body;
-       // this.player.body.setVelocity(velocityX, velocityY);
-        this.gameObject = this;
-       // this.layer = layer;
-         //this.setVelocity = this.setVelocity.bind(this); // Bind setVelocity to this instance
-     //   this.player.setVelocity(this.player.body, velocityX, velocityY);
     }
     
     init() {
