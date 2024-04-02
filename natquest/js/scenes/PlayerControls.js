@@ -57,6 +57,12 @@ export default class PlayerControls extends Phaser.Scene {
         } else {
             playerBody.velocity.y = 0; // Stop vertical movement when no input
         }
+
+         playerBody.velocity.x = this.velocityX;
+        playerBody.velocity.y = this.velocityY;
+     //   Matter.Body.setVelocity(playerBody, playerBody.velocity.x);
+     //   Matter.Body.setVelocity(playerBody, playerBody.velocity.y);
+        Matter.Body.setVelocity(playerBody, { x: playerBody.velocity.x, y: playerBody.velocity.y });
     }
 }
 
