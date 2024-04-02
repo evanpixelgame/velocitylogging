@@ -1,5 +1,5 @@
 export default class PlayerControls extends Phaser.Scene {
-    constructor({ player, speed, velocity }) {
+    constructor() {
         super({ key: 'PlayerControls' });
 
         this.player = null;
