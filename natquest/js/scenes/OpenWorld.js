@@ -18,6 +18,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.transitionSensors = null; // Add transitionSensors property
     this.engine = null;
    this.world = null;
+    this.cursors = null;
   }
 
   init(data) {
@@ -82,12 +83,7 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
 
 
-         this.cursors = this.scene.input.keyboard.addKeys({
-            up: Phaser.Input.Keyboard.KeyCodes.W,
-            down: Phaser.Input.Keyboard.KeyCodes.S,
-            left: Phaser.Input.Keyboard.KeyCodes.A,
-            right: Phaser.Input.Keyboard.KeyCodes.D,
-        });
+
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
           this.playerControls = new PlayerControls(this.player, this);
       
