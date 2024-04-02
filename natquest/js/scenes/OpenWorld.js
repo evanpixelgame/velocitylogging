@@ -81,6 +81,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
   // Assuming you're in a Phaser Scene method
 this.controls = new PlayerControls({
     player: this.player, // Pass the player object
+  cursors: this.cursors,
     speed: 0,            // Pass the speed value (adjust as needed)
     velocity: { x: 0, y: 0 } // Pass the initial velocity (adjust as needed)
 });
