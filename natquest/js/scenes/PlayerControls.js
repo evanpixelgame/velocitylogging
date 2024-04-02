@@ -63,43 +63,7 @@ Matter.Body.setVelocity(playerBody, playerBody.velocity);
 
 }
 
-  
 /*
-update(time, delta) {
-
-      if (!this.player) {
-        return;
-    }
-    let velocityX = 0;
-    let velocityY = 0;
-
-    // Determine velocity based on key presses
-    if (this.cursors.up.isDown) {
-        velocityY = -this.speed;
-    } else if (this.cursors.down.isDown) {
-        velocityY = this.speed;
-    }
-
-    if (this.cursors.left.isDown) {
-        velocityX = -this.speed;
-    } else if (this.cursors.right.isDown) {
-        velocityX = this.speed;
-    }
-
-    // Normalize velocity to prevent faster movement diagonally
-    if (velocityX !== 0 && velocityY !== 0) {
-        const magnitude = Math.sqrt(velocityX * velocityX + velocityY * velocityY);
-        velocityX *= this.speed / magnitude;
-        velocityY *= this.speed / magnitude;
-    }
-
-    // Set the velocity of the player sprite
- this.player.setVelocity(velocityX, velocityY);
-  this.matter.body.setVelocity(this.player.body, { x: velocityX, y: velocityY });
- this.player.body.velocity.x = velocityX;
-this.player.body.velocity.y = velocityY;
-
-
     // Play appropriate animation based on movement direction
     if (velocityX !== 0 || velocityY !== 0) {
         if (velocityX > 0) {
@@ -116,5 +80,5 @@ this.player.body.velocity.y = velocityY;
         this.player.anims.stop();
     }
    this.player.setRotation(0);
-}*/
+*/
 }
