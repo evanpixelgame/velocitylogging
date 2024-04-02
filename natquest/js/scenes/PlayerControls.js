@@ -8,6 +8,12 @@ export default class PlayerControls extends Phaser.Scene {
        // this.cursors = null; // Initialize cursors to null
     }
 
+    init(data) {
+    this.player = data.player;
+    this.speed = data.speed;
+    this.velocity = data.velocity;
+}
+
     create() {
         // Create controls for arrow keys and WASD
         this.cursors = this.input.keyboard.addKeys({
