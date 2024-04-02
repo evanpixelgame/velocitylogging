@@ -76,7 +76,15 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
 
-    const startMenuScene = this.scene.get('StartMenu');
+  // Assuming you're in a Phaser Scene method
+this.controls = new PlayerControls({
+    player: this.player, // Pass the player object
+    speed: 0,            // Pass the speed value (adjust as needed)
+    velocity: { x: 0, y: 0 } // Pass the initial velocity (adjust as needed)
+});
+
+
+/*
     this.cameras.main.setZoom(2);
    // this.cursors = this.input.keyboard.createCursorKeys();
       this.cursors = this.input.keyboard.addKeys({
@@ -85,11 +93,17 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     left: Phaser.Input.Keyboard.KeyCodes.A,
     right: Phaser.Input.Keyboard.KeyCodes.D,
   });
-
-
+  */
   }
 
+
+update(time, delta) {
+ //   if (!this.player) {return;}
   
+}
+
+  
+/*  
 update(time, delta) {
     if (!this.player) {
         return;
@@ -117,7 +131,7 @@ if (this.cursors.up.isDown) {
 Matter.Body.setVelocity(playerBody, playerBody.velocity);
 
 }
-
+*/
   
 }
 
