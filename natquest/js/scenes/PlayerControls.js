@@ -16,8 +16,8 @@ export default class PlayerControls extends Phaser.Scene {
   //  this.velocity = data.velocity;
          this.velocityX = data.velocityX; // Pass velocityX
         this.velocityY = data.velocityY;
-        this.scene = data.scene;
-        this.map = data.map;
+      //  this.scene = data.scene;
+     //   this.map = data.map;
 
             console.log('Received Data:', data);
     console.log('Received Player:', data.player);
