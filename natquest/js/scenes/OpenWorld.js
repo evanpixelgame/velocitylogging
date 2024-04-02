@@ -86,7 +86,7 @@ this.controls = new PlayerControls({
 });
 
 
-/*
+
     this.cameras.main.setZoom(2);
    // this.cursors = this.input.keyboard.createCursorKeys();
       this.cursors = this.input.keyboard.addKeys({
@@ -95,7 +95,7 @@ this.controls = new PlayerControls({
     left: Phaser.Input.Keyboard.KeyCodes.A,
     right: Phaser.Input.Keyboard.KeyCodes.D,
   });
-  */
+
   }
 
 
