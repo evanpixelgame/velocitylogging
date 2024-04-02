@@ -42,7 +42,9 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
     console.log("InsideRoom initialized with:", {
         player: this.player,
         speed: this.speed,
-        velocity: this.velocity,
+        //velocity: this.velocity,
+       velocityX: this.velocityX,
+   velocityY: this.velocityY,
         camera: this.camera,
        controls: this.controls,
         engine: this.engine,
@@ -124,7 +126,9 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
        console.log("InsideRoom end of create func status with:", {
         player: this.player,
         speed: this.speed,
-         velocity: this.velocity,
+        // velocity: this.velocity,
+              velocityX: this.velocityX,
+   velocityY: this.velocityY,
         camera: this.camera,
        controls: this.controls,
         engine: this.engine,
