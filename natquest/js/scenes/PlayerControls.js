@@ -25,12 +25,15 @@ export default class PlayerControls extends Phaser.Scene {
         this.input = input; // Receive input manager
         this.velocityChange = 2;
 
-        // Initialize cursors using the input manager
-        this.cursors = this.input.keyboard.createCursorKeys();
     }
 
         create() {
-              
+                      this.cursors = this.scene.input.keyboard.addKeys({
+            up: Phaser.Input.Keyboard.KeyCodes.W,
+            down: Phaser.Input.Keyboard.KeyCodes.S,
+            left: Phaser.Input.Keyboard.KeyCodes.A,
+            right: Phaser.Input.Keyboard.KeyCodes.D,
+        });
         }
 
     update() {
