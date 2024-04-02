@@ -19,6 +19,8 @@ export default class PlayerControls extends Phaser.Scene {
 
     update() {
         if (!this.player) return; // Guard clause
+        console.log(this.player);
+        console.log(this.player.body);
 
         const force = this.velocityChange;
 
@@ -37,6 +39,8 @@ export default class PlayerControls extends Phaser.Scene {
             // Apply force to move down
             this.player.applyForce({ x: 0, y: force });
         }
+
+        console.log(this.player.velocity);
     }
 }
 
