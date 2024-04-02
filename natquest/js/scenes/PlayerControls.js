@@ -1,4 +1,5 @@
-export default class PlayerControls {
+//export default class PlayerControls {
+export default class PlayerControls extends Phaser.Scene {
     constructor(player, scene) {
         this.player = player;
         this.scene = scene;
