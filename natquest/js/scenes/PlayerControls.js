@@ -42,6 +42,7 @@ export default class PlayerControls extends Phaser.Scene {
 
         if (this.cursors.left.isDown) {
             playerBody.velocity.x = -this.velocityChange;
+            console.log('forthcoingbook left');
         } else if (this.cursors.right.isDown) {
             playerBody.velocity.x = this.velocityChange;
         } else {
