@@ -1,10 +1,11 @@
-export default class PlayerControls extends Phaser.Scene  {
-constructor() {
-    super({ key: 'PLayerControls' });
+export default class PlayerControls extends Phaser.Scene {
+    constructor({ player, speed, velocity }) {
+        super({ key: 'PlayerControls' });
 
-    this.player = null;
-    this.velocity = { x: 0, y: 0 }; // Initialize velocity object
-}
+        this.player = player;
+        this.speed = speed;
+        this.velocity = velocity;
+    }
 
     init(data) {
     // Retrieve player reference and speed from the data object
