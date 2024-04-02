@@ -1,3 +1,4 @@
+import PlayerControls from './PlayerControls.js';
 import NextRoom from './scenes/NextRoom.js'; 
 
 const width = window.innerWidth;
