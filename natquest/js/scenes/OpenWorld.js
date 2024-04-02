@@ -87,9 +87,8 @@ this.controls = new PlayerControls({
 });
 
 
-
     this.cameras.main.setZoom(2);
-   // this.cursors = this.input.keyboard.createCursorKeys();
+      this.cursors = this.input.keyboard.createCursorKeys();
       this.cursors = this.input.keyboard.addKeys({
     up: Phaser.Input.Keyboard.KeyCodes.W,
     down: Phaser.Input.Keyboard.KeyCodes.S,
@@ -104,43 +103,9 @@ update(time, delta) {
     if (!this.player) {
   return;
 }
-
    this.controls.update(time, delta);
 
-  
 }
 
-  
-/*  
-update(time, delta) {
-    if (!this.player) {
-        return;
-    }
-
-    const playerBody = this.player.body;
-
-const velocityChange = 2; // Adjust based on desired speed
-if (this.cursors.left.isDown) {
-    playerBody.velocity.x = -velocityChange;
-} else if (this.cursors.right.isDown) {
-    playerBody.velocity.x = velocityChange;
-} else {
-    playerBody.velocity.x = 0; // Stop horizontal movement when no input
 }
-
-if (this.cursors.up.isDown) {
-    playerBody.velocity.y = -velocityChange;
-} else if (this.cursors.down.isDown) {
-    playerBody.velocity.y = velocityChange;
-} else {
-    playerBody.velocity.y = 0; // Stop vertical movement when no input
-}
-
-Matter.Body.setVelocity(playerBody, playerBody.velocity);
-
-}
-*/
-  
-}
-
 window.OpenWorld = OpenWorld;
