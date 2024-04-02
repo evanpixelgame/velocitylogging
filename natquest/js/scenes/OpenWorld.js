@@ -91,7 +91,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
   }
 
 
-      this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0});
+  //    this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocityX: 0, velocityY: 0});
 
         if (map) {
         console.log('Map after control loaded successfully:', map);
