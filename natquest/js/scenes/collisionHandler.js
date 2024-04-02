@@ -53,13 +53,17 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             
         case 'OpenWorldToInsideRoom':
             console.log('You hit a transition sensor!');
+            // Perform actions specific to this sensor
             console.log('youve hit the sensor by the door');
-          scene.scene.start('InsideRoom', {
-    player: scene.player, // Pass the entire player object, not just its body
-    velocityX: 0, // Pass the player's velocity
-    velocityY: 0
-});
-
+            scene.scene.remove('ComputerControls');
+            scene.scene.start('InsideRoom', {
+                player: scene.player,
+                speed: scene.speed,
+                camera: scene.cameras.main,
+                controls: scene.controls, // Passing the controls object here
+                engine: scene.matter.world,
+                world: scene.world,
+            });
             break;
             
             case 'fastZone':
