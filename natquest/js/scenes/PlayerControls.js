@@ -1,4 +1,6 @@
 //export default class PlayerControls {
+
+/*
 export default class PlayerControls extends Phaser.Scene {
     constructor(player, scene) {
         this.player = player;
@@ -10,6 +12,18 @@ export default class PlayerControls extends Phaser.Scene {
             left: Phaser.Input.Keyboard.KeyCodes.A,
             right: Phaser.Input.Keyboard.KeyCodes.D,
         });
+    } 
+    
+    */
+
+    export default class PlayerControls extends Phaser.Scene {
+    constructor(player, scene) {
+        super({ key: 'PlayerControls' }); // Automatically calls the constructor of the superclass
+
+        // Initialize properties
+        this.player = player;
+        this.scene = scene;
+        this.velocityChange = 2;
     }
 
     update() {
