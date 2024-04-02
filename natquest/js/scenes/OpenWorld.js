@@ -19,6 +19,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.engine = null;
    this.world = null;
     this.cursors = null;
+    this.input = null;
   }
 
   init(data) {
