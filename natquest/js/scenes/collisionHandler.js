@@ -59,6 +59,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             scene.scene.start('InsideRoom', {
                 player: scene.player,
                 speed: scene.speed,
+                velocity: scene.velocity,
                 camera: scene.cameras.main,
                 controls: scene.controls, // Passing the controls object here
                 engine: scene.matter.world,
