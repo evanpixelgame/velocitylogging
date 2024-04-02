@@ -5,7 +5,7 @@ export default class PlayerControls extends Phaser.Scene {
         this.player = null;
         this.speed = 0;
         this.velocity = { x: 0, y: 0 }
-        this.cursors = null; // Initialize cursors to null
+       // this.cursors = null; // Initialize cursors to null
     }
 
     create() {
@@ -17,8 +17,7 @@ export default class PlayerControls extends Phaser.Scene {
             right: Phaser.Input.Keyboard.KeyCodes.D,
         });
 
-        console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference
-        console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
+
     }
 
     update(time, delta) {
@@ -47,5 +46,9 @@ export default class PlayerControls extends Phaser.Scene {
         }
 
         Matter.Body.setVelocity(playerBody, playerBody.velocity);
+
+       //  console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference
+       // console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
     }
+
 }
