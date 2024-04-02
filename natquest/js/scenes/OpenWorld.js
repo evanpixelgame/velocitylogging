@@ -80,9 +80,6 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
     }
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
-  // Listen for the 'created' event on the player sprite
-            const playerBodyWorld = this.player.body ? this.player.body.world : null;
-        console.log('Player Body World123:', playerBodyWorld);
 
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
           this.playerControls = new PlayerControls(this.player, this);
