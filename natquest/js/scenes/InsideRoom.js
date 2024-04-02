@@ -115,9 +115,9 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
     );
    // this.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 
-      this.collisionObjects = createCollisionObjects(this, map);
-      this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
-      this.sensorHandling = sensorHandler(this, map, this.player);
+ //     this.collisionObjects = createCollisionObjects(this, map);
+   //   this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
+     // this.sensorHandling = sensorHandler(this, map, this.player);
 
     
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
