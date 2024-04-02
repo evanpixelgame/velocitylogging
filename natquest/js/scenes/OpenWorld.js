@@ -84,7 +84,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 
     this.collisionObjects = createCollisionObjects(this, map);
    this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
-this.sensorHandling = sensorHandler(this, map, this.player); 
+//this.sensorHandling = sensorHandler(this, map, this.player); 
           
     // Constrain the camera
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
