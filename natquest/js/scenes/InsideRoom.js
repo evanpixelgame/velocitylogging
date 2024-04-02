@@ -10,11 +10,8 @@ export default class InsideRoom extends Phaser.Scene {
   init(data) {
  this.player = data.player;
 }
-
-}
-
+  
   preload() {
-    // Preload assets if needed
   }
 
   create() {
@@ -39,14 +36,7 @@ export default class InsideRoom extends Phaser.Scene {
     for (let i = 0; i < map.layers.length; i++) {
         layers.push(map.createLayer(i, tilesets, 0, 0));
     }
-   // this.speed = 2;
-    // Initialize player sprite
-  //  this.player = new PlayerSprite(this, 970, 664, 'player');
-    
-//    this.player.setScale(1); 
 
-//    this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocity: { x: 0, y: 0 } });
-    
     // Set world bounds for the player
     const boundaryOffset = 2;
     const worldBounds = new Phaser.Geom.Rectangle(
@@ -55,7 +45,6 @@ export default class InsideRoom extends Phaser.Scene {
         map.widthInPixels - 2 * boundaryOffset,
         map.heightInPixels - 2 * boundaryOffset
     );
-   // this.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 
       this.collisionObjects = createCollisionObjects(this, map);
       this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
