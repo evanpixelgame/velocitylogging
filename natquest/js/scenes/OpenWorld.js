@@ -96,8 +96,6 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
             if (isCustom) {
                 switch (otherBody.customID) {
                     case 'OpenWorldToInsideRoom':
-                        console.log('You hit a transition sensor!');
-                        // Perform actions specific to this sensor
                         console.log('youve hit the sensor by the door');
                         scene.scene.start('InsideRoom', {
                               player: this.player,
