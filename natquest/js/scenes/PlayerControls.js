@@ -53,8 +53,8 @@ export default class PlayerControls extends Phaser.Scene {
 
         Matter.Body.setVelocity(playerBody, playerBody.velocity);
 
-         console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference
-         console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
+       //  console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
+      //   console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
     }
 
 }
