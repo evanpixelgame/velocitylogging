@@ -41,34 +41,43 @@ update(time, delta) {
       if (!this.player) {
         return;
     }
-    let velocityX = 0;
-    let velocityY = 0;
 
-    // Determine velocity based on key presses
-    if (this.cursors.up.isDown) {
-        velocityY = -this.speed;
-    } else if (this.cursors.down.isDown) {
-        velocityY = this.speed;
-    }
+   const playerBody = this.player.body;
+    let velocityX = playerBody.velocity.x;
+    let velocityY = playerBody.velocity.y;
+  const velocityChange = 2; // Adjust based on desired speed
 
-    if (this.cursors.left.isDown) {
-        velocityX = -this.speed;
-    } else if (this.cursors.right.isDown) {
-        velocityX = this.speed;
-    }
+  
+        if (this.cursors.left.isDown) {
+            playerBody.velocity.x = -velocityChange;
+            console.log('key is pressed left i think');
+        } else if (this.cursors.right.isDown) {
+            playerBody.velocity.x = velocityChange;
+                  console.log('key is pressed right i think');
+        } else {
+            playerBody.velocity.x = 0; // Stop horizontal movement when no input
+        }
 
-    // Normalize velocity to prevent faster movement diagonally
-    if (velocityX !== 0 && velocityY !== 0) {
-        const magnitude = Math.sqrt(velocityX * velocityX + velocityY * velocityY);
-        velocityX *= this.speed / magnitude;
-        velocityY *= this.speed / magnitude;
-    }
+        if (this.cursors.up.isDown) {
+            playerBody.velocity.y = -velocityChange;
+             console.log('key is pressed up i think');
+        } else if (this.cursors.down.isDown) {
+            playerBody.velocity.y = velocityChange;
+             console.log('key is pressed down i think');
+        } else {
+            playerBody.velocity.y = 0; // Stop vertical movement when no input
+        }
 
-    // Set the velocity of the player sprite
- this.player.setVelocity(velocityX, velocityY);
-  this.matter.body.setVelocity(this.player.body, { x: velocityX, y: velocityY });
- this.player.body.velocity.x = velocityX;
-this.player.body.velocity.y = velocityY;
+        playerBody.velocity.x = this.velocityX;
+        playerBody.velocity.y = this.velocityY;
+     //   Matter.Body.setVelocity(playerBody, playerBody.velocity.x);
+     //   Matter.Body.setVelocity(playerBody, playerBody.velocity.y);
+        Matter.Body.setVelocity(playerBody, { x: playerBody.velocity.x, y: playerBody.velocity.y });
+
+
+
+        console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
+        console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
 
  
 //console.log(this.player);
