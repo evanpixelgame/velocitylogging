@@ -100,8 +100,8 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     speed: 0, 
     velocityX: 0, 
     velocityY: 0, 
-    scene: this, 
-    map: map 
+   // scene: this, 
+ //   map: map 
 });
 
   }
