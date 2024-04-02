@@ -95,6 +95,7 @@ this.sensorHandling = sensorHandler(this, map, this.player);
         // Get player's position
     let x = this.player.body.position.x;
     let y = this.player.body.position.y;
+    console.log("Player position: x =", x, ", y =", y);
 
     // Debug graphics
   //  this.debugGraphics.clear().fillStyle(0xff0000).fillCircle(x, y, 5);
