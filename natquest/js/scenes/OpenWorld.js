@@ -1,7 +1,7 @@
 import { PlayerSprite } from './PlayerSprite.js';
 import { sensorMapSet, createCollisionObjects, sensorHandler } from './collisionHandler.js';
-import { gameManager } from '../gameState.js';
-import PlayerControls from './PlayerControls.js';
+//import { gameManager } from '../gameState.js';
+//import PlayerControls from './PlayerControls.js';
 
 
 export default class OpenWorld extends Phaser.Scene {
@@ -9,10 +9,10 @@ export default class OpenWorld extends Phaser.Scene {
     super({ key: 'OpenWorld' });
     
     // Declare controls as a property of the class (should I delete these and put in the init func?
-   this.controls = null;
+//   this.controls = null;
     this.map = null;
     this.player = null;
-    this.playerControls = null;
+  //  this.playerControls = null;
     this.speed = 2; 
     this.collisionObjects = null; 
     this.transitionSensors = null; // Add transitionSensors property
@@ -20,7 +20,7 @@ export default class OpenWorld extends Phaser.Scene {
    this.world = null;
  //   this.cursors = null;
    // this.input = null;
-    this.velocityChange = null;
+  //  this.velocityChange = null;
   }
 
   init(data) {
@@ -84,10 +84,10 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
 
-
+ this.scene.launch('PlayerControls', { player: this.player });
 
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
-          this.playerControls = new PlayerControls(this.player, this.velocityChange);
+        //  this.playerControls = new PlayerControls(this.player, this.velocityChange);
       
     console.log(this.player.body);
     console.log('Player World:', this.player.body.world);
