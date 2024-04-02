@@ -1,6 +1,7 @@
 import { PlayerSprite } from './PlayerSprite.js';
 import { sensorMapSet, createCollisionObjects, sensorHandler } from './collisionHandler.js';
 import { gameManager } from '../gameState.js';
+import PlayerControls from './PlayerControls.js';
 
 
 export default class OpenWorld extends Phaser.Scene {
@@ -11,6 +12,7 @@ export default class OpenWorld extends Phaser.Scene {
    this.controls = null;
     this.map = null;
     this.player = null;
+    this.playerControls = null;
     this.speed = 2; 
     this.collisionObjects = null; 
     this.transitionSensors = null; // Add transitionSensors property
@@ -83,7 +85,7 @@ console.log('HELLO THERE PLEASE LOG ' + this.world);
         console.log('Player Body World123:', playerBodyWorld);
 
  //    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed });
-          
+          this.playerControls = new PlayerControls(this.player, this);
       
     console.log(this.player.body);
     console.log('Player World:', this.player.body.world);
@@ -119,14 +121,8 @@ this.sensorHandling = sensorHandler(this, map, this.player); //used to have this
     // Constrain the camera
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
-
-    const startMenuScene = this.scene.get('StartMenu');
     this.cameras.main.setZoom(2);
 
-   console.log('PLEASE PLEASE LOG' + this.world);
-   console.log('PRETTY PLEASE' + this.controls);
-   console.log('PRETY PLZ LOG VELOCITY FROM OPENWORLD: ' + this.velocity);
- console.log('TITI IS SO PRETTY HERES SENSORID OBJECT: ' + gameManager.sensorID.fastZone);
   }
    
 
@@ -134,7 +130,9 @@ this.sensorHandling = sensorHandler(this, map, this.player); //used to have this
         
   update(time, delta) {
     // Update method code here
-  //  Matter.Runner.run(this.engine);
+     if (this.playerControls) {
+            this.playerControls.update();
+        }
   }
 }
 
