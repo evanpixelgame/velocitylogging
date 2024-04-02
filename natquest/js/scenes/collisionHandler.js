@@ -93,10 +93,10 @@ export function sensorHandler(scene, map, player, transitionSensors) {
              scene.scene.start('NextRoom', {
                 player: scene.player,
                 speed: scene.speed,
-                camera: scene.cameras.main,
+           //     camera: scene.cameras.main,
                 controls: scene.controls, // Passing the controls object here
-                engine: scene.matter.world,
-                world: scene.world,
+              //  engine: scene.matter.world,
+            //    world: scene.world,
                 //newPosition: newPosition,
             });
             break;
