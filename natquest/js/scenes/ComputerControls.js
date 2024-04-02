@@ -77,12 +77,12 @@ update(time, delta) {
 
 
         console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
-        console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
+        console.log("Received velocity in PlayerControls:", this.player.velocity.x, this.player.body.velocity.y);
 
  
-//console.log(this.player);
-//    console.log(this.player.body);
-//   console.log(this.player.body.velocity);
+console.log(this.player);
+    console.log(this.player.body);
+   console.log(this.player.body.velocity);
 
     // Play appropriate animation based on movement direction
     if (velocityX !== 0 || velocityY !== 0) {
