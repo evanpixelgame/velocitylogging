@@ -4,7 +4,9 @@ export default class PlayerControls extends Phaser.Scene {
 
         this.player = null;
         this.speed = 0;
-        this.velocity = { x: 0, y: 0 }
+       // this.velocity = { x: 0, y: 0 }
+         this.velocityX = 0; // Pass velocityX
+        this.velocityY = 0; /
        // this.cursors = null; // Initialize cursors to null
     }
 
@@ -12,6 +14,8 @@ export default class PlayerControls extends Phaser.Scene {
     this.player = data.player;
     this.speed = data.speed;
     this.velocity = data.velocity;
+         this.velocityX = data.velocityX; // Pass velocityX
+        this.velocityY = data.vekicityY; /
 }
 
     create() {
@@ -51,7 +55,11 @@ export default class PlayerControls extends Phaser.Scene {
             playerBody.velocity.y = 0; // Stop vertical movement when no input
         }
 
-        Matter.Body.setVelocity(playerBody, playerBody.velocity);
+        playerBody.velocity.x = this.velocityX;
+        playerBody.velocity.y = this.velocityY;
+        Matter.Body.setVelocity(playerBody, playerBody.velocity.x);
+        Matter.Body.setVelocity(playerBody, playerBody.velocity.y);
+
 
        //  console.log("Received player in PlayerControls:", this.player, this.player.body); // Log player reference  //BOTH LOGGING SUCCESSFULLY
       //   console.log("Received velocity in PlayerControls:", this.player.velocity, this.player.body.velocity);
