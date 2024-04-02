@@ -37,6 +37,7 @@ const config = {
     CharSelect,
     WelcomePlayer,
     MobileControls,
+    PlayerControls,
     ComputerControls,
     PlayerAnimations,
     CompUI,
