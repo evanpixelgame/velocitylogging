@@ -4,7 +4,7 @@ export default class PlayerControls extends Phaser.Scene {
 
         this.player = null;
         this.speed = 0;
-       // this.velocity = { x: 0, y: 0 }
+        this.velocity = { x: 0, y: 0 }
          this.velocityX = 0; // Pass velocityX
         this.velocityY = 0; 
        // this.cursors = null; // Initialize cursors to null
@@ -13,7 +13,7 @@ export default class PlayerControls extends Phaser.Scene {
     init(data) {
     this.player = data.player;
     this.speed = data.speed;
- //   this.velocity = data.velocity;
+    this.velocity = data.velocity;
          this.velocityX = data.velocityX; // Pass velocityX
         this.velocityY = data.vekicityY;
         this.scene = data.scene;
