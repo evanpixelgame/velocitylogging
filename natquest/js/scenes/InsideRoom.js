@@ -1,5 +1,4 @@
 import { PlayerSprite } from './PlayerSprite.js';
-//import ComputerControls from './ComputerControls.js';
 import { sensorMapSet, createCollisionObjects, sensorHandler } from './collisionHandler.js';
 
 export default class InsideRoom extends Phaser.Scene {
@@ -11,7 +10,6 @@ export default class InsideRoom extends Phaser.Scene {
   init(data) {
       this.controls = data.controls || null;
       this.engine = data.engine || null;
-    // Check if the necessary data is provided
    // Check if the necessary data is provided
 if (!data || !data.player || !data.speed || !data.camera || !data.controls || !data.engine || !data.world) {
     let missingData = [];
@@ -102,9 +100,6 @@ if (!data || !data.player || !data.speed || !data.camera || !data.controls || !d
     
     this.player.setScale(1); 
 
-  //  this.scene.add('ComputerControls', ComputerControls); // Add ComputerControls scene
-//      this.controls = this.scene.get('ComputerControls'); // Retrieve controls scene
-//    this.scene.launch('ComputerControls', { player: this.player, speed: this.speed }); // Launch ComputerControls scene
 //    this.scene.launch('PlayerControls', { player: this.player, speed: 0, velocity: { x: 0, y: 0 } });
     
     // Set world bounds for the player
