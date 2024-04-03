@@ -89,16 +89,17 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.setZoom(2);
 console.log(this.player);
     // Delay starting the NewScene by 10 seconds
+           if (this.player && this.player.body) {
     this.time.delayedCall(2000, () => {
         console.log('Starting NewScene...');
         this.scene.start('NewScene', {
                player: this.player,
-            playerBody: this.player.body,
-            playerX: this.player.body.position.x,
-            playerY: this.player.body.position.y
+            //playerBody: this.player.body,
+          //  playerX: this.player.body.position.x,
+        //    playerY: this.player.body.position.y
         });
     }, [], this);
-
+           }
   }
       
   update(time, delta) {
