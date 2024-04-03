@@ -10,8 +10,6 @@ export class PlayerSprite extends Phaser.Physics.Matter.Sprite {
         // Set up the player's physics body
      //   const playerWidth = this.width;
     //    const playerHeight = this.height;
-        const playerWidth = this.scene.textures.get('player').getSourceImage().width;
-const playerHeight = this.scene.textures.get('player').getSourceImage().height;
 
         this.setBody({
             type: 'rectangle',
@@ -24,7 +22,7 @@ const playerHeight = this.scene.textures.get('player').getSourceImage().height;
         });
 
         // Set the player's scale and size
-        this.setScale(0.5);
+       
         const scaledWidth = playerWidth * 0.5;
         const scaledHeight = playerHeight * 0.5;
         this.setSize(scaledWidth, scaledHeight);
@@ -32,7 +30,7 @@ const playerHeight = this.scene.textures.get('player').getSourceImage().height;
             console.log(this.body);
             console.log(this.world);
             console.log('Player Body Worldfromplaysprite:', this.body.world);
-       
+        this.setScale(0.5);
  
     }
 }
