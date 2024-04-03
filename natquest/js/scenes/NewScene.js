@@ -1,5 +1,5 @@
 import { PlayerSprite } from './PlayerSprite.js';
-import { sensorMapSet, createCollisionObjects } from './collisionHandler.js';
+import { sensorMapSet, createCollisionObjects, sensorHandler } from './collisionHandler.js';
 
 export default class NewScene extends Phaser.Scene {
   constructor() {
@@ -8,7 +8,7 @@ export default class NewScene extends Phaser.Scene {
     this.map = null;
     this.player = null; 
     this.collisionObjects = null; 
-    this.transitionSensors = null; // Add transitionSensors property
+    this.transitionSensors = null;
     this.engine = null;
     this.world = null;
   }
@@ -50,8 +50,10 @@ export default class NewScene extends Phaser.Scene {
 
      this.player = new PlayerSprite(this, 970, 664, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
     console.log(this.player);
+    this.player.setScale(1); 
     
      this.scene.launch('PlayerControls', { player: this.player });
+    
     
     // Set world bounds for the player
     const boundaryOffset = 2;
@@ -65,6 +67,7 @@ export default class NewScene extends Phaser.Scene {
     // Set up collision objects and sensor mapping
     this.collisionObjects = createCollisionObjects(this, map);
     this.sensorMapping = sensorMapSet(this, map, this.sensorID);
+    this.sensorHandling = sensorHandler(this, map, this.player); 
 
     // Constrain the camera
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
