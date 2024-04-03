@@ -56,7 +56,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             // Perform actions specific to this sensor
             console.log('youve hit the sensor by the door');
             //scene.scene.remove('ComputerControls');
-            scene.scene.start('InsideRoom', {
+            scene.scene.start('NewScene', {
                 player: scene.player,
                 speed: scene.speed,
                 camera: scene.cameras.main,
