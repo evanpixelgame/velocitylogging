@@ -53,7 +53,6 @@ export default class NewScene extends Phaser.Scene {
     
      this.add.existing(this.player);
     // Set the player's initial position
-    this.player.setPosition(970, 665);
 
     
     // Set world bounds for the player
