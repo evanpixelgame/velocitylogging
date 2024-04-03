@@ -59,6 +59,7 @@ export default class OpenWorld extends Phaser.Scene {
     }
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
+    const playerBody = this.player.body;
 
  this.scene.launch('PlayerControls', { player: this.player });
 
@@ -101,6 +102,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
         // Get player's position
     let x = this.player.body.position.x;
     let y = this.player.body.position.y;
+        
  //   console.log("Player position: x =", x, ", y =", y);
            Matter.Body.setVelocity(playerBody, { x: velocityX, y: velocityY });
   }
