@@ -8,8 +8,11 @@ export class PlayerSprite extends Phaser.Physics.Matter.Sprite {
     
     init() {
         // Set up the player's physics body
-        const playerWidth = this.width;
-        const playerHeight = this.height;
+     //   const playerWidth = this.width;
+    //    const playerHeight = this.height;
+        const playerWidth = this.scene.textures.get(texture).getSourceImage().width;
+const playerHeight = this.scene.textures.get(texture).getSourceImage().height;
+
         this.setBody({
             type: 'rectangle',
             width: playerWidth / 2,
