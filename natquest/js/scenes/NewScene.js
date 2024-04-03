@@ -20,7 +20,6 @@ export default class NewScene extends Phaser.Scene {
   }
 
   preload() {
-
   }
        
   create() {
@@ -48,13 +47,11 @@ export default class NewScene extends Phaser.Scene {
     for (let i = 0; i < map.layers.length; i++) {
         layers.push(map.createLayer(i, tilesets, 0, 0));
     }
-    
-    // this.add.existing(this.player);
-    // Set the player's initial position
-//this.player = this.add.existing(this.player);
-   // this.player = this.scene.get('OpenWorld').player;
+
      this.player = new PlayerSprite(this, 970, 664, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
     console.log(this.player);
+    
+     this.scene.launch('PlayerControls', { player: this.player });
     
     // Set world bounds for the player
     const boundaryOffset = 2;
