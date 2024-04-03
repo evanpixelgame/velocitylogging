@@ -18,6 +18,7 @@ export default class OpenWorld extends Phaser.Scene {
   init(data) {
         this.openWorldScene = data.OpenWorld;
        this.player = data.player;
+         this.player.body = data.playerBody;
   }
       
   preload() {
