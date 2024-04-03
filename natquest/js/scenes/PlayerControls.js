@@ -6,6 +6,7 @@ export default class PlayerControls extends Phaser.Scene {
 
     init(data) {
         this.player = data.player;
+        playerBody = this.player.body;
     }
 
     create() {
