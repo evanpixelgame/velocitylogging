@@ -51,9 +51,10 @@ export default class NewScene extends Phaser.Scene {
         layers.push(map.createLayer(i, tilesets, 0, 0));
     }
     
-     this.add.existing(this.player);
+    // this.add.existing(this.player);
     // Set the player's initial position
-
+this.player = this.add.existing(this.player);
+    console.log(this.player);
     
     // Set world bounds for the player
     const boundaryOffset = 2;
