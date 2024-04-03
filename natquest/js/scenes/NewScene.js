@@ -53,7 +53,7 @@ export default class NewScene extends Phaser.Scene {
     // Set the player's initial position
 //this.player = this.add.existing(this.player);
    // this.player = this.scene.get('OpenWorld').player;
-     this.player = new PlayerSprite(this, 970, 664, 'player');
+     this.player = new PlayerSprite(this, 970, 664, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
     console.log(this.player);
     
     // Set world bounds for the player
