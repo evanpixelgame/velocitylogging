@@ -77,6 +77,7 @@ export default class PlayerControls extends Phaser.Scene {
         // Stop animation when no movement
         this.player.anims.stop();
     }
+         this.player.setRotation(0);
 }
 
 }
