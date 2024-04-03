@@ -90,6 +90,8 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 console.log(this.player);
     // Delay starting the NewScene by 10 seconds
            if (this.player && this.player.body) {
+                  console.log(this.player);
+                  console.log(this.player.body);
     this.time.delayedCall(2000, () => {
         console.log('Starting NewScene...');
         this.scene.start('NewScene', {
