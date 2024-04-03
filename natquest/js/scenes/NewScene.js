@@ -71,7 +71,7 @@ export default class NewScene extends Phaser.Scene {
 
     // Constrain the camera
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
+  //  this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
   }
       
   update(time, delta) {
