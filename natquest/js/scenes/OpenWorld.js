@@ -106,7 +106,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
           let velY = this.player.body.velocity.y;
         
  //   console.log("Player position: x =", x, ", y =", y);
- Matter.Body.setVelocity(this.player, { x: velX, y: velY });
+// Matter.Body.setVelocity(this.player, { x: velX, y: velY });
   }
 }
 
