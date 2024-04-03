@@ -53,7 +53,8 @@ export default class NewScene extends Phaser.Scene {
     
     // this.add.existing(this.player);
     // Set the player's initial position
-this.player = this.add.existing(this.player);
+//this.player = this.add.existing(this.player);
+    this.player = this.scene.get('OpenWorld').player;
     console.log(this.player);
     
     // Set world bounds for the player
