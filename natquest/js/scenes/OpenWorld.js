@@ -87,7 +87,9 @@ this.sensorHandling = sensorHandler(this, map, this.player);
     this.cameras.main.setZoom(2);
 console.log(this.player);
     // Delay starting the NewScene by 10 seconds
-           if (this.player && this.player.body) {
+       
+    /*
+    if (this.player && this.player.body) {
                   console.log(this.player);
     this.time.delayedCall(2000, () => {
         console.log('Starting NewScene...');
@@ -96,6 +98,7 @@ console.log(this.player);
         });
     }, [], this);
            }
+           */
   }
       
   update(time, delta) {
