@@ -16,6 +16,7 @@ export default class NewScene extends Phaser.Scene {
   init(data) {
     // Initialize scene properties from the data passed from the previous scene
     this.player = data.player;
+    this.playerBody = data.playerBody;
     console.log('Player received in NewScene:', this.player, this.player.body);
   }
 
