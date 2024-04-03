@@ -2,10 +2,8 @@ export class PlayerSprite extends Phaser.Physics.Matter.Sprite {
     constructor(scene, x, y, texture) {
         super(scene.matter.world, x, y, texture);
 
-        // Initialize the player sprite
-        this.init();
-        // Add the player sprite to the scene
         scene.add.existing(this);
+        this.init();
     }
     
     init() {
