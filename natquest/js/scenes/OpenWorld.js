@@ -86,7 +86,7 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.setZoom(2);
 
     // Delay starting the NewScene by 10 seconds
-    this.time.delayedCall(10000, () => {
+    this.time.delayedCall(2000, () => {
         console.log('Starting NewScene...');
         this.scene.start('NewScene', {
             player: this.player,
