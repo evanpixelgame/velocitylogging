@@ -51,9 +51,11 @@ export default class PlayerControls extends Phaser.Scene {
     }
 
     // Optional: Reset to zero velocity if no key is pressed
+       if (this.player && this.player.body) {
     if (!this.cursors.left.isDown && !this.cursors.right.isDown && !this.cursors.up.isDown && !this.cursors.down.isDown) {
         Matter.Body.setVelocity(playerBody, { x: 0, y: 0 });
     }
+       }
 }
 
 }
