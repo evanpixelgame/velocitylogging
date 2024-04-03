@@ -17,7 +17,7 @@ export default class PlayerControls extends Phaser.Scene {
         });
     }
 
-  update() {
+  update(time, delta) {
     if (!this.player) return; // Guard clause
  //   console.log(this.player);
     // Ensure we're accessing the Matter.js body directly
