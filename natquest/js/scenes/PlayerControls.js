@@ -45,11 +45,11 @@ export default class PlayerControls extends Phaser.Scene {
 
     // Set the player's velocity directly
     // Ensure we're working with the Matter body, which might require adjusting how you access the player's body
-    Matter.Body.setVelocity(playerBody, { x: velocityX, y: velocityY });
+    Matter.Body.setVelocity(this.player, { x: velocityX, y: velocityY });
 
     // Optional: Reset to zero velocity if no key is pressed
     if (!this.cursors.left.isDown && !this.cursors.right.isDown && !this.cursors.up.isDown && !this.cursors.down.isDown) {
-        Matter.Body.setVelocity(playerBody, { x: 0, y: 0 });
+        Matter.Body.setVelocity(this.player, { x: 0, y: 0 });
     }
 }
 
