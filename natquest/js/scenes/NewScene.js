@@ -49,7 +49,12 @@ export default class NewScene extends Phaser.Scene {
     for (let i = 0; i < map.layers.length; i++) {
         layers.push(map.createLayer(i, tilesets, 0, 0));
     }
+    
+     this.add.existing(this.player);
+    // Set the player's initial position
+    this.player.setPosition(970, 665);
 
+    
     // Set world bounds for the player
     const boundaryOffset = 2;
     const worldBounds = new Phaser.Geom.Rectangle(
