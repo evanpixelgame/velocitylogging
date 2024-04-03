@@ -84,31 +84,15 @@ this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
-    this.player.scene.matter.world.on('collisionstart', (eventData) => {
-    // Loop through pairs of colliding bodies
-    eventData.pairs.forEach(pair => {
-        // Check if the player is one of the bodies involved in the collision
-        if (pair.bodyA === this.player.body || pair.bodyB === this.player.body) {
-            // Get the other body involved in the collision
-            const otherBody = pair.bodyA === this.player.body ? pair.bodyB : pair.bodyA;
-            const isCustom = otherBody.isSensor == true;
-
-            if (isCustom) {
-                switch (otherBody.customID) {
-                    case 'OpenWorldToInsideRoom':
-                        console.log('youve hit the sensor by the door');
-                        this.scene.start('NewScene', {
-                              player: this.player,
-                              playerX: this.player.body.position.x,
-                              playerY: this.player.body.position.y
-                        });
-                        break;
-                    // Add more cases for other sensors if needed
-                }
-            }
-        }
-    });
-});
+    // Delay starting the NewScene by 10 seconds
+    this.time.delayedCall(10000, () => {
+        console.log('Starting NewScene...');
+        this.scene.start('NewScene', {
+            player: this.player,
+            playerX: this.player.body.position.x,
+            playerY: this.player.body.position.y
+        });
+    }, [], this);
 
   }
       
