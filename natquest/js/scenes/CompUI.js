@@ -13,6 +13,7 @@ class CompUI extends Phaser.Scene {
       //  this.speed = data.speed;
     //   this.map = data.map;
     //   this.camera = data.camera;
+       this.gameScene = data.gameScene;
     }
       
   preload() {
@@ -281,9 +282,10 @@ exitFullScreen() {
 
 //**********************************************************************ZOOM METHODS****************************************************************
   
-  zoomIn() {
-  if (this.cameras.main.zoom < 3) {
-    this.cameras.main.zoom *= 1.1; // Increase zoom by 10%
+zoomIn() {
+  let camera = this.gameScene.cameras.main; // Adjust this line
+  if (camera.zoom < 3) {
+    camera.zoom *= 1.1; // Increase zoom by 10%
   } else {
     console.log('Maximum zoom level reached.');
   }
