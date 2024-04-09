@@ -282,8 +282,8 @@ exitFullScreen() {
 //**********************************************************************ZOOM METHODS****************************************************************
   
   zoomIn() {
-  if (this.openWorldCamera.zoom < 3) {
-    this.openWorldCamera.zoom *= 1.1; // Increase zoom by 10%
+  if (this.camera.zoom < 3) {
+    this.camera.zoom *= 1.1; // Increase zoom by 10%
   } else {
     console.log('Maximum zoom level reached.');
   }
