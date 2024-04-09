@@ -292,13 +292,13 @@ zoomIn() {
 }
 
 zoomOut() {
-  if (this.camera.zoom > 1) { // Set a minimum zoom level (0.2 is just an example)
-    this.camera.zoom /= 1.1; // Decrease zoom by 10%
+  let camera = this.gameScene.cameras.main; // Adjust this line
+  if (camera.zoom > 1) { // Set a minimum zoom level (1 is just an example)
+    camera.zoom /= 1.1; // Decrease zoom by 10%
   } else {
     console.log('Minimum zoom level reached.');
   }
 }
-  
 
           
  // ****************************************************************END OF METHODS START OF UPDATE FUNC*************************************************************
