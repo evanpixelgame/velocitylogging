@@ -22,10 +22,10 @@ class CompUI extends Phaser.Scene {
 
   create() {
 
-     this.updateGameSceneReference(); // Initial update
+ //    this.updateGameSceneReference(); // Initial update
   
   // Optionally, listen to scene start or wake events
-  this.scene.manager.events.on('start', this.updateGameSceneReference, this);
+//  this.scene.manager.events.on('start', this.updateGameSceneReference, this);
 
       //  this.openWorldScene = this.scene.get('OpenWorld');
       //  this.player = this.openWorldScene.player;
