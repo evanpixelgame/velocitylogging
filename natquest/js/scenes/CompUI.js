@@ -22,11 +22,16 @@ class CompUI extends Phaser.Scene {
 
   create() {
 
+     this.updateGameSceneReference(); // Initial update
+  
+  // Optionally, listen to scene start or wake events
+  this.scene.manager.events.on('start', this.updateGameSceneReference, this);
+
       //  this.openWorldScene = this.scene.get('OpenWorld');
       //  this.player = this.openWorldScene.player;
       //  this.speed = this.openWorldScene.speed;
 //this.camera = this.cameras.main;
-     const startMenuScene = this.scene.get('StartMenu');
+    // const startMenuScene = this.scene.get('StartMenu');
 
         const vw = window.innerWidth;
     const xMid = vw * .5;
@@ -297,6 +302,17 @@ zoomOut() {
     camera.zoom /= 1.1; // Decrease zoom by 10%
   } else {
     console.log('Minimum zoom level reached.');
+  }
+}
+
+
+  updateGameSceneReference() {
+  const scenes = this.scene.manager.getScenes(true); // Get all active scenes
+  for (let scene of scenes) {
+    if (scene.scene.key !== 'CompUI' && scene instanceof Phaser.Scene) { // Add more conditions as needed
+      this.gameScene = scene;
+      break; // Assuming you only need the first matching scene
+    }
   }
 }
 
