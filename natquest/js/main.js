@@ -42,11 +42,12 @@ const config = {
     PlayerControls,
     ComputerControls,
     PlayerAnimations,
-    CompUI,
+   // CompUI,
     OpenWorld,
     NewScene,
     InsideRoom,
     NextRoom,
+    CompUI,
   ],
    interpolation: true,
 };
