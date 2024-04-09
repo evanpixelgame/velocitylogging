@@ -4,15 +4,15 @@ class CompUI extends Phaser.Scene {
     super({ key: 'CompUI' });
 
      this.dropdownContainer = null;
-    this.openWorldScene = null;
+     this.openWorldScene = null;
   }
 
      init(data) {
         this.openWorldScene = data.OpenWorld;
         this.player = data.player;
-        this.speed = data.speed;
-       this.map = data.map;
-       this.openWorldCamera = data.camera;
+      //  this.speed = data.speed;
+    //   this.map = data.map;
+       this.camera = data.camera;
     }
       
   preload() {
@@ -22,8 +22,8 @@ class CompUI extends Phaser.Scene {
   create() {
 
         this.openWorldScene = this.scene.get('OpenWorld');
-        this.player = this.openWorldScene.player;
-        this.speed = this.openWorldScene.speed;
+      //  this.player = this.openWorldScene.player;
+      //  this.speed = this.openWorldScene.speed;
 
      const startMenuScene = this.scene.get('StartMenu');
 
