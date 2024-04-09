@@ -37,7 +37,7 @@ export default class OpenWorld extends Phaser.Scene {
 
     this.scene.launch('CompUI', { OpenWorld: this, player: this.player, map: this.map, camera: this.cameras.main });
         this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
-    this.scene.launch('CompUI', { OpenWorld: this, player: this.player, speed: this.speed, map: this.map, camera: this.cameras.main });
+  //  this.scene.launch('CompUI', { OpenWorld: this, player: this.player, speed: this.speed, map: this.map, camera: this.cameras.main });
 
     const map = this.make.tilemap({ key: 'map' });
     // Load tileset
