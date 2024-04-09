@@ -290,8 +290,8 @@ exitFullScreen() {
 }
 
 zoomOut() {
-  if (this.openWorldCamera.zoom > 1) { // Set a minimum zoom level (0.2 is just an example)
-    this.openWorldCamera.zoom /= 1.1; // Decrease zoom by 10%
+  if (this.camera.zoom > 1) { // Set a minimum zoom level (0.2 is just an example)
+    this.camera.zoom /= 1.1; // Decrease zoom by 10%
   } else {
     console.log('Minimum zoom level reached.');
   }
