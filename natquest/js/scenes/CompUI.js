@@ -24,7 +24,7 @@ class CompUI extends Phaser.Scene {
       //  this.openWorldScene = this.scene.get('OpenWorld');
       //  this.player = this.openWorldScene.player;
       //  this.speed = this.openWorldScene.speed;
-this.camera = scene.camera.main;
+this.camera = this.cameras.main;
      const startMenuScene = this.scene.get('StartMenu');
 
         const vw = window.innerWidth;
