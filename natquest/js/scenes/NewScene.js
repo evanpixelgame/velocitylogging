@@ -27,6 +27,14 @@ export default class NewScene extends Phaser.Scene {
     this.engine = this.scene.get('OpenWorld').engine;
     this.world = this.scene.get('OpenWorld').world;
 
+   // Get the reference to the already launched CompUI scene
+    const compUIScene = this.scene.get('CompUI');
+    
+    // If the CompUI scene exists, update its gameScene property
+    if (compUIScene) {
+        compUIScene.gameScene = this;
+    }
+    
     // Create the map
     const map = this.make.tilemap({ key: 'insidemap' });
     // Load tilesets and create layers
