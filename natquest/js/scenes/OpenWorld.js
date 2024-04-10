@@ -16,8 +16,7 @@ export default class OpenWorld extends Phaser.Scene {
   init(data) {
         this.openWorldScene = data.OpenWorld;
        this.player = data.player;
-         console.log(this.player);
-       //  this.player.body = data.playerBody;
+       console.log(this.player);
   }
       
   preload() {
@@ -34,11 +33,9 @@ export default class OpenWorld extends Phaser.Scene {
     if (this.sys.game.device.os.android || this.sys.game.device.os.iOS) {
         this.scene.launch('MobileControls', { player: this.player, speed: this.speed });
     }
-
-    //this.scene.launch('CompUI', { player: this.player, map: this.map, camera: this.cameras.main });
     this.scene.launch('CompUI', { gameScene: this });
-        this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
-  //  this.scene.launch('CompUI', { OpenWorld: this, player: this.player, speed: this.speed, map: this.map, camera: this.cameras.main });
+    this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
+
 
     const map = this.make.tilemap({ key: 'map' });
     // Load tileset
@@ -77,8 +74,7 @@ const worldBounds = new Phaser.Geom.Rectangle(
 );
 
 this.matter.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
-          
-           console.log(this.world);
+console.log(this.world);
 
     this.collisionObjects = createCollisionObjects(this, map);
    this.sensorMapping = sensorMapSet(this, map, this.sensorID);  
@@ -106,15 +102,12 @@ console.log(this.player);
       
   update(time, delta) {
 
-        // Get player's position
+    // Get player's position
     let posX = this.player.body.position.x;
     let posY = this.player.body.position.y;
-        let velX = this.player.body.velocity.x;
-          let velY = this.player.body.velocity.y;
-         console.log(posX, posY, velX, velY);
-        
- //   console.log("Player position: x =", x, ", y =", y);
-// Matter.Body.setVelocity(this.player, { x: velX, y: velY });
+    let velX = this.player.body.velocity.x;
+    let velY = this.player.body.velocity.y;
+    //console.log(posX, posY, velX, velY);
   }
 }
 
