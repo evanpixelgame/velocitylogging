@@ -1,3 +1,4 @@
+//NOTES: make it so that the icons revert to where they should be after rescale
 
 class CompUI extends Phaser.Scene {
   constructor() {
