@@ -85,25 +85,11 @@ this.sensorHandling = sensorHandler(this, map, this.player);
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
-console.log(this.player);
-    // Delay starting the NewScene by 10 seconds
-       
-    /*
-    if (this.player && this.player.body) {
-                  console.log(this.player);
-    this.time.delayedCall(2000, () => {
-        console.log('Starting NewScene...');
-        this.scene.start('NewScene', {
-               player: this.player,
-        });
-    }, [], this);
-           }
-           */
+    console.log(this.player);
   }
       
   update(time, delta) {
-
-    // Get player's position
+    // Get player's position and velocity
     let posX = this.player.body.position.x;
     let posY = this.player.body.position.y;
     let velX = this.player.body.velocity.x;
@@ -111,5 +97,4 @@ console.log(this.player);
     //console.log(posX, posY, velX, velY);
   }
 }
-
 window.OpenWorld = OpenWorld;
