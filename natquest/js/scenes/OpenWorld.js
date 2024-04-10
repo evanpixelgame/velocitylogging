@@ -37,7 +37,6 @@ export default class OpenWorld extends Phaser.Scene {
     this.scene.launch('CompUI', { gameScene: this });
     this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
 
-
     const map = this.make.tilemap({ key: 'map' });
     // Load tileset
     const tilesetsData = [
