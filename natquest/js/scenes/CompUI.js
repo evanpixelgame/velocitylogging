@@ -307,17 +307,7 @@ zoomOut() {
   }
 }
 
-
-  updateGameSceneReference() {
-  const scenes = this.scene.manager.getScenes(true); // Get all active scenes
-  for (let scene of scenes) {
-    if (scene.scene.key !== 'CompUI' && scene instanceof Phaser.Scene) { // Add more conditions as needed
-      this.gameScene = scene;
-      break; // Assuming you only need the first matching scene
-    }
-  }
-}
-
+  
           
  // ****************************************************************END OF METHODS START OF UPDATE FUNC*************************************************************
   update(time, delta) {
