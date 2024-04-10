@@ -65,7 +65,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.scene.launch('PlayerControls', { player: this.player });
 
     // Set world bounds for the player
-    const boundaryOffset = 2; // Adjust this value as needed
+    const boundaryOffset = 2; // This value indicates the margin from the end of the map the player can't move past
     const worldBounds = new Phaser.Geom.Rectangle(
       boundaryOffset,
       boundaryOffset,
@@ -84,7 +84,6 @@ export default class OpenWorld extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
-    console.log(this.player);
   }
 
   update(time, delta) {
