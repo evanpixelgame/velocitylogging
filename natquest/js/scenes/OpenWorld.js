@@ -8,8 +8,6 @@ export default class OpenWorld extends Phaser.Scene {
 
     this.map = null;
     this.player = null;
-//    this.collisionObjects = null;
- //   this.transitionSensors = null; // Add transitionSensors property
     this.engine = null;
     this.world = null;
   }
@@ -17,7 +15,6 @@ export default class OpenWorld extends Phaser.Scene {
   init(data) {
     this.openWorldScene = data.OpenWorld;
     this.player = data.player;
-    console.log(this.player);
   }
 
   preload() {
@@ -60,7 +57,8 @@ export default class OpenWorld extends Phaser.Scene {
     }
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
-
+    console.log(this.player);
+    
     this.scene.launch('PlayerControls', { player: this.player });
     
     // Set world bounds for the player
@@ -93,5 +91,6 @@ export default class OpenWorld extends Phaser.Scene {
     let velY = this.player.body.velocity.y;
     //console.log(posX, posY, velX, velY);
   }
+  
 }
 window.OpenWorld = OpenWorld;
